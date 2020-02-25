@@ -35,3 +35,4 @@ struct dimensions mat(char file[])
 	printf("%d\n", matrix.columns);
 	return matrix;
 }
+ 
