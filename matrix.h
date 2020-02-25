@@ -17,3 +17,4 @@ struct matrix *parse(struct dimensions, char file[]);
 
 int *multiply(struct matrix *one, struct matrix *two);
 #endif
+ 
