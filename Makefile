@@ -1,6 +1,6 @@
 TARGET=MMult
-OBJS= main.o dimensions.o matparse.o mmult.o
-CFLAGS=-g
+OBJS= main.o mmult.o
+CFLAGS= -Wall
 
 ALL: $(TARGET)
 
