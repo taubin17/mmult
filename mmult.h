@@ -1,5 +1,5 @@
-#ifndef matrix_h_
-#define gps_h_
+#ifndef mmult_h_
+#define mmult_h_
 struct matrix {
 	int rows;
 	int columns;
