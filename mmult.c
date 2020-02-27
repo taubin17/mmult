@@ -21,19 +21,14 @@ struct matrix *mmult (struct matrix *mat1, struct matrix *mat2) //PRE: Matrix
 	double temp = 0;
 	for (int i = 0; i < mat1->rows; i++) {
 		for (int j = 0; j < mat2->columns; j++) {
-			for (int k = 0; k < mat2->rows; k++) {
+			for (int k = 0; k < mat1->columns; k++) {
 				temp += (mat1->elements[i][k] * mat2->elements[k][j]);
 			}
 			result->elements[i][j] = temp;
 			temp = 0;	
 		}
 	}
-	/*for (int i = 0; i < mat1->rows; i++) {
-		for (int j = 0; j < mat2->columns; j++) {
-			printf("%lf ", result->elements[i][j]);
-		}
-		printf("\n");
-	} */
+	printf("%lf \n", result->elements[1][0]);
 	return result; 
 }
 
@@ -48,8 +43,7 @@ struct matrix mat(int rows, int columns)
 	}
 	for (int i = 0; i < mat.rows; i++) {
 		for (int j = 0; j < mat.columns; j++) {
-			//mat.elements[i][j] = rand_double();
-			mat.elements[i][j] = 1;
+			mat.elements[i][j] = rand_double();
 		}
 	}
 	return mat;
