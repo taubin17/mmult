@@ -30,7 +30,6 @@ int main (int argc, char *argv[])
 		printf("Matrix size is invalid, please enter again\n");
 		return 0;
 	}
-	//if ((row1 > column2))
 	//Building Arrays based on parameter size
 	mat1 = mat(row1, column1);
 	mat2 = mat(row2, column2);
@@ -39,7 +38,6 @@ int main (int argc, char *argv[])
 	result = mmult(&mat1, &mat2);
 	//Log mmult end timec
 	clock_gettime(CLOCK_REALTIME, &finish);
-	printf("Time in Seconds: %ld.%ld\n", (finish.tv_sec - start.tv_sec), (finish.tv_nsec - start.tv_nsec));
 	//Print out Matrix
 
 	for (int i = 0; i < row1; i++) {
@@ -47,8 +45,14 @@ int main (int argc, char *argv[])
 			printf("%lf ", result->elements[i][j]);
 		}
 		printf("\n");
+		//free(result->elements);
 	}
-	//Free allocated struct pointer and dynamically allocated array
+	//Print time taken to run mmult()
+	printf("Time in Seconds: %ld.%d\n", (finish.tv_sec - start.tv_sec), (abs(finish.tv_nsec - start.tv_nsec)));	
+	//Free allocated struct pointer and dynamically allocated arrays
+	free(mat1.elements);
+	free(mat2.elements);
+	free(result->elements);
 	free(result);
 	return 0;	
 }
